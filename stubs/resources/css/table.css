@@ -1,0 +1,13 @@
+table {
+    @apply w-full;
+}
+table thead th {
+    @apply py-3 px-4 bg-gray-100 text-xs uppercase font-medium text-left border-b border-gray-200 leading-4 tracking-wider;
+}
+table tbody {
+    @apply bg-white;
+}
+table tbody td {
+    @apply py-3 px-4 whitespace-nowrap;
+    font-size: 13px;
+}

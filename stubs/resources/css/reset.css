@@ -1,0 +1,7 @@
+label {
+    @apply font-bold;
+}
+
+a {
+    @apply cursor-pointer;
+}

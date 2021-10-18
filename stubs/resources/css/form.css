@@ -1,0 +1,42 @@
+input::placeholder, 
+select::placeholder, 
+textarea::placeholder {
+    @apply text-sm;
+}
+
+input:focus, 
+button:focus, 
+select:focus, 
+textarea:focus, 
+a:focus,
+input:active, 
+button:active, 
+select:active, 
+textarea:active, 
+a:active {
+    outline: 0 !important;
+    box-shadow: none;
+    border: none;
+}
+
+.form-input {
+    @apply appearance-none py-1.5 px-3 border border-gray-300 rounded-md leading-normal bg-white text-sm;
+}
+.form-input.form-input-error {
+    @apply border-red-500 ring-2 ring-red-200;
+}
+
+.form-input:hover {
+    @apply ring-2 ring-gray-200;
+}
+
+.form-input:focus,
+.form-input:active {
+    @apply outline-none border border-gray-400 ring-2 ring-gray-300;
+}
+
+.required::after {
+    @apply text-red-500;
+    content: " ∗";
+}
+

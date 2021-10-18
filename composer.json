@@ -1,0 +1,35 @@
+{
+    "name": "jiannius/atom",
+    "description": "Starting point for a Laravel application",
+    "type": "library",
+    "require": {
+        "doctrine/dbal": "^3.1",
+        "inertiajs/inertia-laravel": "^0.4.4",
+        "intervention/image": "^2.6",
+        "laravel/sanctum": "^2.11",
+        "tightenco/ziggy": "^1.4",
+        "torann/geoip": "^3.0",
+        "rap2hpoutre/fast-excel": "^3.0",
+        "barryvdh/laravel-dompdf": "^0.9.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jiannius\\Atom\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TJ",
+            "email": "tj@jiannius.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jiannius\\Atom\\AtomServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
