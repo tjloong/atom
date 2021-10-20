@@ -48,7 +48,7 @@ export default {
                 if (['error', 'failed', 'blocked', 'due'].includes(this.status)) color = 'red'
                 if (['admin', 'queueing', 'unpaid', 'submitted', 'checked-out'].includes(this.status)) color = 'yellow'
                 if (['default', 'partial', 'pending', 'feedback', 'shipped', 'processing', 'ready'].includes(this.status)) color = 'blue'
-                if (['paid', 'billed', 'delivered', 'invoiced', 'active', 'closed', 'sent', 'verified', 'success'].includes(this.status)) color = 'green'
+                if (['paid', 'billed', 'delivered', 'invoiced', 'active', 'closed', 'sent', 'verified', 'success', 'published'].includes(this.status)) color = 'green'
             }
 
             if (!color) color = 'gray'
