@@ -115,7 +115,6 @@ export default {
             })
 
             this.state.reading = false
-
             this.$emit('input', { files: this.files })
         },
     }

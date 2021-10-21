@@ -138,6 +138,16 @@ export default {
                 this.close()
             }
             else {
+                if (data.files) {
+                    const size = data.files.reduce((acc, file) => (acc + file.size), 0)
+                    const mb = size/1024/1024
+
+                    if (mb >= 8) {
+                        this.close()
+                        return this.$alert('Upload file size too large. Please reduce your file size to below 10MB.', 'alert')
+                    }
+                }
+
                 this.form = this.$inertia.form({ upload: data })
                 this.form.post(this.url, {
                     onSuccess: () => {
