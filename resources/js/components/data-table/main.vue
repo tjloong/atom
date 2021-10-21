@@ -425,11 +425,7 @@ export default {
                 title: 'Extract Data',
                 message: `This will export ${this.meta.total} ${this.$options.filters.pluralize(this.meta.total, 'record')}. Continue?`,
                 onConfirmed: () => {
-                    let filters = {}
-                    this.meta.filters.forEach(val => filters[val.column] = val.value)
-                    
-                    const qs = (new URLSearchParams(filters)).toString()
-
+                    const qs = (new URLSearchParams(this.meta.filters || {})).toString()
                     window.location = `${this.extractUrl}?${qs}`
                 }
             })

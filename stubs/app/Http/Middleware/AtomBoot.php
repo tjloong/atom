@@ -20,15 +20,18 @@ class AtomBoot
     {
         Inertia::share('app_name', config('app.name'));
         Inertia::share('app_version', app_version());
-        Inertia::share('navs', $this->getNavs($request));
         Inertia::share('flash', $this->getFlash($request));
         Inertia::share('toast', $this->getToast($request));
         Inertia::share('alert', $this->getAlert($request));
         Inertia::share('async', $request->session()->get('async'));
         Inertia::share('referer', $this->getReferer());
-        Inertia::share('auth.can', $this->getPermissions($request));
-        Inertia::share('auth.user', request()->user() ?: null);
-        Inertia::share('auth.is_root', request()->user() ? request()->user()->isRole('root') : false);
+
+        if ($request->user()) {
+            Inertia::share('navs', $this->getNavs($request));
+            Inertia::share('auth.can', $this->getPermissions($request));
+            Inertia::share('auth.user', request()->user()->load('tenant', 'reseller') ?: null);
+            Inertia::share('auth.is_root', request()->user() ? request()->user()->isRole('root') : false);
+        }
 
         return $next($request);
     }
