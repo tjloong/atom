@@ -35,7 +35,7 @@ class Seo extends Component
         $appname = config('app.name');
 
         if ($title = config('atom.seo.title')) $this->title = $title;
-        else if ($env === 'production') $this->title = $appname;
+        else if ($env === 'PRODUCTION') $this->title = $appname;
         else $this->title = "[$env]$appname";
 }
 
