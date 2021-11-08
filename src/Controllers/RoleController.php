@@ -3,6 +3,7 @@
 namespace Jiannius\Atom\Controllers;
 
 use App\Models\Role;
+use App\Models\User;
 use App\Models\Tenant;
 use App\Models\Ability;
 use App\Requests\RoleStoreRequest;
@@ -47,7 +48,7 @@ class RoleController extends Controller
             'role' => $role,
         ];
 
-        if ($tab === 'users') $data['users'] = $role->users()->fetch();
+        if ($tab === 'users') $data['users'] = User::where('role_id', $role->id)->fetch();
         if ($tab === 'abilities') {
             $data['abilities'] = Ability::all()->map(function($ability) use ($role) {
                 $ability->enabled = $role->abilities()->where('abilities.id', $ability->id)->count() > 0
