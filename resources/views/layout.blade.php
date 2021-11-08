@@ -20,6 +20,7 @@
     @stack('styles')
 
     <x-atom-gtm/>
+    <x-atom-ga/>
     <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
     @stack('scripts')
 </head>
