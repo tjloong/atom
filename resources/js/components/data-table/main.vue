@@ -185,6 +185,9 @@
                                         :key="status"
                                         :status="status"
                                     />
+                                    <div v-if="field.small" class="text-xs text-gray-400 mt-1">
+                                        {{ field.small(row) }}
+                                    </div>
                                 </template>
 
                                 <template v-else-if="field.isImage">

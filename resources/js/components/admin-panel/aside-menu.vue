@@ -27,12 +27,12 @@
         />
 
         <div class="absolute inset-0 z-20 bg-gray-800 flex flex-col text-white overflow-y-auto overflow-x-hidden">
-            <inertia-link href="/" class="flex items-center py-3 px-5 flex-shrink-0">
+            <div class="flex items-center py-3 px-5 flex-shrink-0">
                 <img src="/storage/img/logo.svg" class="w-7 mr-2">
                 <div>
                     <span class="font-light">{{ brand.split('::')[0] }}</span><span class="font-bold">{{ brand.split('::')[1] }}</span>
                 </div>
-            </inertia-link>
+            </div>
 
             <div class="flex-grow">
                 <div class="text-xs text-gray-500 py-2 px-6">
