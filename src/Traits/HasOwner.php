@@ -88,8 +88,12 @@ trait HasOwner
             return $query;
         }
         else if ($access === 'team') {
+            $query->where('owned_by', $user->id);
+
             if (in_array(HasTeam::class, class_uses_recursive($user))) {
-                return $query->ownerTeamId($user->teams->pluck('id')->toArray());
+                return $query->orWhere(function($q) use ($user) {
+                    $q->ownerTeamId($user->teams->pluck('id')->toArray());
+                });
             }
         }
     }
