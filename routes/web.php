@@ -5,6 +5,14 @@ use Jiannius\Atom\Controllers\FileController;
 use Jiannius\Atom\Controllers\TeamController;
 use Jiannius\Atom\Controllers\RoleController;
 use Jiannius\Atom\Controllers\UserController;
+use Jiannius\Atom\Controllers\LalamoveController;
+
+Route::prefix('lalamove')->group(function() {
+    Route::post('services', [LalamoveController::class, 'getServices']);
+    Route::post('quotation', [LalamoveController::class, 'getQuotation']);
+    Route::post('order', [LalamoveController::class, 'createOrder']);
+    Route::post('order-details', [LalamoveController::class, 'getOrderDetails']);
+});
 
 Route::prefix('app')->middleware('auth')->group(function() {
     Route::inertia('/', 'dashboard')->name('app.home');
